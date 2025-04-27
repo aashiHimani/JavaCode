@@ -1,0 +1,172 @@
+Exception- is an event which disrupts the flow of a program. 
+		   When an exception occurs, an exception object is created, which contains the information regarding 
+		   the error, type, and state of the program when the error occurred. 
+
+types of Exceptions-Checked and Unchecked. 
+					Checked exceptions are the exceptions checked at compile time by the compiler. 
+					Unchecked Exceptions are those not checked at the compile time by the compiler. 
+
+advantages of using exception handling-Java Exception handling maintains the flow of program execution. 
+									   It handles the exceptions.
+
+Exception handling keywords-try(used to enclose a block of code)
+		catch(used to catch and handle exceptions), 
+		finally(define a block of code that will be executed regardless of whether an exception occurred or not)
+		throw(used to explicitly throw an exception)
+		throws(used in method signatures to indicate that the method might throw specific exceptions, 
+				which need to be handled by the caller or propagated further).
+
+difference between error and Exception-Errors are all unchecked, but exceptions can be checked or unchecked. 
+								Errors occur at the run time, whereas the exceptions occur at the compile time.
+
+built-in Exceptions-The exceptions already present in the Java Libraries and can help handle certain error 
+					situations are called built-in Exceptions. Examples are ArithmeticException, 
+					ArrayIndexOutOfBoundException, etc.
+
+Can checked exceptions be thrown from static block-no,there's no specific path to catch checked Exceptions.
+
+Can we write only try block without a catch and finally blocks-No, it throws a compilation error. 
+										The try block should be followed by either catch or a finally block. 
+										Either one of them can be removed but not both.
+
+exception OutOfMemoryError-It is the sub class of java.lang.Error encountered when the JVM runs out of memory.
+
+ClassCastException-It is RuntimeException that occurs when JVM is unable to cast an object of one type to another type.
+
+try-with-resources blocks-The try statement that declares one or more resources and ensures that each of them 
+					is closed finally at the end of statement execution is called the try-with-resources block.
+
+finally-it is always executed no matter if the try or catch block returns the control. 
+
+re-throwing an exception-When an exception is found in the catch block, first of all, the Exception is caught 
+						 by the catch block. Then, the Exception has to be re-thrown. 
+						 To re-throw an exception, we use the throw keyword.
+
+Exception propagation-It refers to the transferring of Exceptions from one method to the previous method in 
+					  order to handle the Exception efficiently.
+
+difference between throw, throws, and throwable-
+throw is used to throw an exception manually.Exception should be of type java.lang.Throwable class or its subclasses
+class ThrowExample{
+    void method() throws Exception
+    {
+        Exception ex = new Exception();
+        throw ex;            
+    }
+}
+throws is used in the method declaration to indicate that this method may throw exceptions. 
+class ThrowsExample
+{
+    void methodOne() throws SQLException
+    {
+        //This method may throw SQLException
+    }
+   }
+Throwable forms a part of the super class that is for all types of errors and exceptions in java. 
+class MyException extends Throwable
+{
+           //Customized Exception class
+}
+
+difference between final, finally, and finalize-
+Final is an access modifier.final method is called when we execute it
+finally, a block in Exception Handling and finalize forms a method of the object class.it executed after the try-catch block is executed
+finalize executes just before the object is destroyed.
+
+What happens if we have statements after the finally block and the control is returning from the finally block itself?
+This gives an unreachable code error. As the control is returning from the finally block itself, the compiler will not look into the statements after it. Hence, it shows an unreachable code error.
+
+Can you have an empty catch block?
+A catch block is used to catch the exceptions found in the try block. 
+Actually, we can have an empty catch block, but there are better practices to implement.
+
+What does JVM do when an exception occurs in a program?
+An exception Object is created, which is thrown to inform that an error has occurred. 
+If the Exception is not handled correctly, JVM displays an error message and terminates.
+
+Is it possible to have a return statement in the catch or finally block?
+Yes, we can have a return statement in the catch or finally block; if we write a return statement at the end, 
+the code will execute successfully, and the code below it will become a part of unreachable code.
+
+User Defined Exceptions-the exceptions created by the programmers to use their own designed exceptions and 
+						those not present in the java exception library. 
+class ninjas{
+public static void main(String args[]){
+    try{
+        int a = 7;
+        int b = 10;
+        int f = a / b;
+        System.out.println(f);
+        if(f == 0){
+            throw new MyException1("Designed Exception");
+        }
+    }
+    catch(MyException1 e){
+        System.out.println(e.getMessage());
+    }
+}
+}
+class MyException1 extends Exception {
+public MyException1(String message){
+    super(message);
+    }
+}
+
+unreachable catch block error=As Exception is the superclass of all exceptions, the catch block provided with 
+							  relation to it should and must always come last. When retaining numerous catch 
+							  blocks, the catch blocks must be kept in ascending order of specificity. 
+							  Exception subclasses should always come first, followed by superclasses. 
+							  Compiler will generate an error if we continue to order superclasses before 
+							  subclasses.
+
+hierarchy of exceptions-
+java.lang.Error: It is a super class for all types of errors in Java. 
+java.lang.VirtualMachineError: –
+StackOverFlowError
+OutOfMemoryError
+java.lang.AssertionError
+java.lang.LinkageError: 
+NoClassDefFoundError
+IncompatibleClassChangeError
+java.lang.Exception: It is a super class of all exception types in Java. Common 
+RunTimeException
+ArithmeticException
+NumberFormatException
+NullPointerException
+ArrayIndexOutOfBoundsException
+ClassCastException
+java.lang.InterruptedException
+java.lang.IOException
+java.lang.SQLException
+java.lang.ParseException
+
+Can we throw multiple exceptions in one throw statement?
+No, we cannot throw multiple exceptions in one throw statement. 
+Only one object of exception type can be thrown by using a throw statement at a time.
+
+chained exception-Throwing an exception along with another exception is called a chained exception in java.
+
+methods provided by the Throwable class are as follows:
+getMessage()
+toString()
+printStackTrace()
+fillInStackTrace()
+getStackTrace()
+getClause()
+
+stack trace- contains information regarding methods called during your execution of the application. 
+			 A stack trace is a debugging tool as it helps in the determination of the exact point where the 
+			 exception occurred in the application and also the reason why it occurred. 
+
+
+Use a finally block to clean up resources or close them.
+Throw specific exceptions.
+Do not catch the Exception class. Catch the specific sub classes.
+No exception must be thrown from the finally block.
+ Use descriptive messages when throwing exceptions.
+
+Is it possible to override a superclass method that is throwing an unchecked exception along with a checked exception in the sub class?
+When a super class method is throwing an unchecked exception, then it is possible for it to be overridden in the sub class with the same exception or any other unchecked exceptions, but it's not possible to do so with checked exceptions.
+
+It is always recommended to close the DB resources to keep them inside a finally block. Why?
+The finally block is the block that is always executed no matter whether the exceptions are raised or not or caught. Cleanup Operations ensure that these will always be executed irrespective of whether an exception occurs or not.

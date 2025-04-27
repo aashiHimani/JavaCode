@@ -1,0 +1,51 @@
+package com.interfaces.main;
+
+import java.util.Comparator;
+
+class Stud{
+	int age;
+	String name;
+	public Stud(Integer age, String name) {
+		super();
+		this.age = age;
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "Student [age=" + age + ", name=" + name + "]";
+	}
+}
+class CustomerSortingComapre implements Comparator<Stud>{
+	
+		@Override
+		public int compare(Stud o1, Stud o2) {
+			// TODO Auto-generated method stub
+			int NameCompare = o1.getName().compareTo(o2.getName());
+			int AgeCompare = o1.getAge().compareTo(o2.getAge());
+			return (NameCompare == 0) ? AgeCompare: NameCompare;
+		}
+ 
+        // 2nd level comparison
+        
+}
+
+public class ComparatorInterfaceMoreField {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

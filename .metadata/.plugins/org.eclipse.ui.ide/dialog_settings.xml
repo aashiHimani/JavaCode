@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\himan\Downloads\Spring-Boot-Sample-Project-master"/>
+			<item value="C:\Users\himan\Downloads\product-order-services-configuration-master"/>
+			<item value="D:\Project\com-cg-capgemini-spring1-pranali-miniproject-main-main-main\com-cg-capgemini-spring1-pranali-miniproject-main-main-main"/>
+			<item value="D:\Project\com-cg-spring-boot-demo-oct12-main"/>
+			<item value="C:\Users\himan\Downloads\E-Scooter-Rent-main"/>
+			<item value="C:\Users\himan\Downloads\product-order-services-master"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\Polymorphism"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\OOPS"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\Interface"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\Inheritance"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\GenericMethod"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\ExceptionHandling"/>
+			<item value="C:\Users\himan\Downloads\backup\JavaProgramming\Encapsulation"/>
+			<item value="C:\Users\himan\Downloads\backup\Himu_Demo\PractoceSet"/>
+			<item value="C:\Users\himan\Downloads\backup\Himu_Demo\PracticeSet"/>
+			<item value="C:\Users\himan\Downloads\backup\Himu_Demo\JDBC_Connect"/>
+			<item value="C:\Users\himan\Downloads\backup\Himu_Demo\Demo"/>
+		</list>
+	</section>
+</section>

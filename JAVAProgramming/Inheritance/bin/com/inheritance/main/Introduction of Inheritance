@@ -1,0 +1,322 @@
+Inheritance is the term used in Java to describe the process of building a new class utilizing the features 
+of an existing class. In other words, inheritance is how a child class acquires each parent class's traits.
+
+Superclasses are classes from which features are inherited by subclasses. 
+It is also known as the parent class or foundation class.
+
+Subclasses are classes that contain all the properties, methods, and nested classes of another class. 
+A derived class, kid class, or extended class are other names.
+
+Two keywords can be used to implement or accomplish inheritance:
+a.extends: The keyword extends is used to create an inheritance relationship between two classes and two 
+interfaces.
+b.implements: The term "implements" establishes the line of descent between a class and an interface.
+
+The "extends" keyword can be used to build a subclass. 
+The following syntax is used to declare a class subclass:
+class subName extends superName
+{
+  // SubclassVariables
+  // SubclassMethods
+}
+
+Can a class extends on its own? Unable to extend itself.
+
+Are the instance initialization block and function Object() { [native code] } inherited by subclasses?
+No, the superclass's constructor and instance initialization block cannot be passed down to its subclass; 
+nonetheless, they are used when creating an object of the subclass.
+
+are static members passed down to subclasses? static blocks can't be passed down to their subclasses.
+A static method from the superclass is inherited as a static member by the subclass, 
+while non-static methods are only inherited as non-static members.
+
+Can you override a final method? A final method cannot be overridden
+
+How are constructors called in the case of inheritance? constructors are called in a hierarchical order.
+
+Why do Java programmers use inheritance?? An inheritance is utilized to leverage polymorphism and reuse 
+code by establishing a type hierarchy. For type declaration, inheritance is preferable, but because the 
+composition is more versatile, it's a better choice for code reuse.
+
+By placing the common code in the superclass and distributing it among various subclasses, 
+we can reduce the amount of duplicate code in an application.
+The application's redundancy is decreased as a result of shorter code.
+Application code may become more adaptable through inheritance.
+
+One of the fundamental elements of the OOPs paradigm is inheritance. 
+Some objects have similar traits and characteristics. 
+A child class can inherit all of the traits and actions of the parent class.
+
+By overriding, we can extend the functionality of a class or method via inheritance.
+The features of a class that already exist are utilized through inheritance.
+It is used to implement method overriding, often known as runtime polymorphism.
+ou can also try this code with Online Java Compiler
+Run Code
+Yes, the compilation of the code will succeed, and 40, 50, 50 is the output.
+
+Multiple Inheritance in Java refers to when a class extends two base classes or superclasses, 
+although a class cannot simultaneously extend more than one class in Java. One class may extend no more 
+than one other class.Because of this, Java does not permit multiple inheritance through classes, 
+which reduces ambiguity, complexity, and confusion.
+
+A reference variable used to refer to the immediate parent class object in Java is the super keyword.
+When you create an instance of a subclass, an implicit instance of the parent class is also produced and 
+referred to by the super reference variable.
+The term "super" refers to an instant parent class variable.
+The instant parent class constructor is called using the super() function.
+The immediate parent class function is called using super.
+
+The act of declaring two methods with the same name but different method signatures is known as overloading.
+For example, System.out, an object of the PrintStream class, contains several println() methods that can be 
+used to print various data types, including byte, short, int, char, float, and double.
+They are all referred to as overloaded methods. In Java, overloaded method calls are resolved at compile time 
+and require distinct method signatures.
+
+The only requirement for method overloading is that each overloaded method's method signature is unique.
+For example, the method signature can be altered by altering the amount or type of method arguments. 
+System.out.println() is overloaded to accept various primitive types, including int, short, byte, float, and 
+others.All of them accept the same reasoning, but they all have different types.
+Changing the order of the method arguments is another way to change the method signature; however, 
+doing so frequently results in unclear code and should be avoided.
+
+Another option to define a method with the same name but a different code is to override it; 
+this method must be in a subclass.The basis for overriding is run-time. Method calls with polymorphism are 
+resolved at runtime based on the actual object.For example, if a variable of type Parent contains an object 
+of the Child class, the method called will, unless it is overridden, be from the Child class and not the 
+Parent class.You must go by the rules of method overriding, which include declaring a method with the same 
+signature in a subclass to override a method.
+
+method hiding mean?Because Java's static methods' method calls are resolved at compile time, they cannot be 
+modified. However, this did not stop you from declaring a method with the same name in a subclass.
+In this instance, we say that a static method in the parent class was hidden by a method in the subclass.
+Because overloading is handled at compile time, if a variable in the parent class points to an object in the 
+child class, the parent class's static method will also be called.
+
+21. Is it possible to block method overriding without the final modifier?
+In Java, there are indeed some odd ways to prevent method overriding. Although the final modifier is only for that purpose, method overriding can be avoided using the private keyword.
+
+How? If you recall, an extensible class is required to override a method. Because the parent class's constructor won't be available to subclasses if you make it private, that class cannot be extended.
+
+This cannot be overridden because it is automatically called by the subclass's constructor.
+
+This method is applied in the Singleton design pattern, where the constructor is purposely made secret, and an accessible singleton instance is made available via a static getInstance() method.
+
+22. Does Java permit multiple inheritance or can a class extend multiple classes? Why not, then?
+Java does not enable multiple inheritance, nor can a class extend more than one class. Java does not enable multiple inheritance since it can lead to ambiguity, complexity, and confusion. For example, Class C will have two methods with the same name if it extends Classes A and B, each of which has a method with the same name. This makes it unclear and difficult to decide which approach to take. Java does not permit multiple inheritance in order to prevent this.
+
+class C1
+{
+    void funOne()
+    {
+        System.out.println("From methodOfClassC1");
+    }
+}
+ 
+class C2
+{
+    void funOne()
+    {
+        System.out.println("From methodOfClassC2");
+    }
+}
+ 
+class C3 extends C1, C2 ()
+{
+    //Class C3 will inherit two identical methods.
+ 
+    //This leads to uncertainty and misunderstanding.
+}
+You can also try this code with Online Java Compiler
+Run Code
+23. List the Java access specifiers that are available?
+Here is a list of the access specifiers that Java supports:
+
+private: A private modifier is only accessible to members of the class. Outside of class, it can't be accessed.
+default: A default modifier is only available within the package. Outside of the package, it cannot be accessed. If no access level is specified, the default will apply.
+protected: A protected modifier can be accessed inside and outside the package via a child class. Only a child class can access it; nevertheless, it cannot be accessed outside the package.
+public: A public modifier is available everywhere. It may be accessible both inside and outside of the class and inside and outside the package.
+24. What does "co-variant Method Overriding" means?
+One of the rules of method overriding is that the return type of the overriding method must be the same as the overridden method; however, starting with Java 1.5, this requirement has been slightly eased and the overridden method can now return a subclass of the return type of the original method.
+
+Casting at the client end can be eliminated thanks to a relaxation technique called co-variant method overriding.
+
+The clone() method overriding is one of the best examples. The Object.clone() method returns an Object that needs to be cast, but by overriding the co-variant method, you can return the appropriate type immediately.
+
+Example: The Date class returns an object of type java.util.Date rather than java.lang.Object.
+
+25. What distinguishes composition from inheritance?
+In Java, composition and inheritance differ in a number of ways, including the following:
+
+While inheritance cannot be modified, i.e. you cannot ask a class to implement another class at runtime, the composition is more flexible since you may change the implementation at runtime by executing the setXXX() function.
+A Room HAS A Fan, yet a Mango IS-A Fruit is an example of how composition builds HAS-A relationship while inheritance builds IS-A relationship.
+Inheritance represents the parent-child relationship the best. However, the composition can also be used if you just need one class. 
+You can also read about Has-A Relationship in Java here.
+
+26. What distinguishes inheritance from encapsulation?
+A parent-child relationship is created via the object-oriented idea of inheritance. Although it serves as the foundation for polymorphism, it is one approach to reuse code created for parent classes.
+
+On the other hand, encapsulation is an object-oriented notion used to conceal a class's internal details, such as How to store elements and generate hash values are both covered by HashMap.
+
+27. What distinguishes overriding from overloading methods?
+The primary distinction between overloading and overriding is that the former occurred during compile time while the latter occurred during run time. This is the cause.
+
+Only virtual methods in Java can be overloaded. Methods resolved at compile time, such as private, static, and final methods in Java, cannot be overridden.
+
+Additionally, the conditions for overloading and overriding methods differ. For instance, a method must have a different method signature to be considered overloading, whereas it must have the same method signature to be considered overriding.
+
+28. What are the super() and this() methods in Java?
+super()
+
+To call the constructor in the superclass, use the super keyword.
+Super always refers to the current class's parent.
+You can use Super to access the parent class's public and protected methods and properties. The parent's private methods and properties are hidden from you.
+Only the constructors of the class can access constructors using super.
+this()
+
+A reference to the current class is made by this.
+It enables access to the current class's methods and attributes, including private ones.
+It is used to access the current object's methods and fields. Because of this, it, for instance, has no significance in static methods. this keyword was previously used to call the class's constructor (other overloaded constructor)
+29. Three classes, C1, C2, and C3, have been established in the code below. Both Class C2 and Class C1 are extended by Class C3.
+Is there a way for Class C3 to invoke the method f1() of Class C1, which exists in each class?
+
+public class C1 
+{
+  void f1(){
+    System.out.println("f1 in class C1");  
+ }
+}
+public class C2 extends C1 
+{
+  void f1() {
+     System.out.println("f1 in class C2");
+ }
+}
+public class C3 extends C2 
+{
+  void f1() {
+System.out.println("f1 in class C3"); 
+   }
+ }
+public class Test {
+public static void main(String[] args) 
+{
+   C3 c3 = new C3();
+    c3.f1();
+  }
+}
+You can also try this code with Online Java Compiler
+Run Code
+
+Every class in the code above has a method called f1() with the same signature; as a result, Class C2 overrides Class C1's f1() method, and Class C3 overrides Class C2's f1() method.
+
+Using the super.f1() call classes C2 and C3 can now call their superclass's f1() function.
+
+However, in this case, invoking C1's f1() method from Class C3 is not possible because it violates Java's OOPs notion and does not employ super.super.
+
+Since multiple inheritance is not permitted in Java, C3 can only see one superclass, which will have just one f1() method implementation. The f1() method of C1 is hidden from C3.
+
+This situation is sometimes referred to as the Diamond Problem of Multiple Inheritance. Class C2 and Class C3 must both call the super.f1() method for class C3 to call class C1's f1() implementation.
+
+30. What distinguishes aggregation and composition as two distinct concepts?
+The terms "aggregation" and "composition" refer to different association links in the OOPs paradigm. Between classes, a composition forges a solid connection.
+
+All components of a composite item are destroyed if it is destroyed. A car, as an illustration, has a steering wheel. 
+
+
+
+
+
+
+
+Inheritance is an Object oriented feature which allows a class to inherit behavior and data from other class. For example, a class Car can extend basic feature of Vehicle class by using Inheritance. One of the most intuitive examples of Inheritance in the real world is Father-Son relationship, where Son inherit Father's property. If you don't know, Inheritance is the quick way to become rich :)
+
+
+Question 2: What are different types of Inheritance supported by Java? (detailed answer)
+Answer: Java supports single Inheritance, multi-level inheritance and at some extent multiple inheritances because Java allows a class to only extend another class, but an interface in Java can extend multiple inheritances.
+
+Types of Inheritance in Java
+
+
+
+Question 3: Why multiple Inheritance is not supported by Java? (detailed answer)
+Answer: Java is introduced after C++ and Java designer didn't want to take some C++ feature which is confusing and not essential. They think multiple inheritances is one of them which doesn't justify complexity and confusion it introduces. You can also check why multiple inheritances are not supported in Java for more reasons and discussion around this.
+
+
+Question 4: Why Inheritance is used by Java Programmers? (detailed answer)
+Answer: Inheritance is used for code reuse and leveraging Polymorphism by creating a type hierarchy. It's better to use Inheritance for type declaration but for code reuse composition is a better option because it's more flexible. See this article for learning more about why Composition is better than Inheritance.
+
+
+Question 5: How to use Inheritance in Java? (detailed answer)
+Answer: You can use Inheritance in Java by extending classes and implementing interfaces. Java provides two keywords extends and implements to achieve inheritance.  A class which is derived from another class is known as a subclass and an interface which is derived from another interface is called subinterface. A class which implements an interface is known as implementation.
+
+
+
+Question 6: What is the syntax of Inheritance? (detailed answer)
+Answer: You can use either extends of implements keyword to implement Inheritance in Java.  A class extends another class using extends keyword, an interface can extend another interface using extend keyword, and a class can implement an interface using implements keyword in Java.
+
+
+Question 7: What is the difference between Inheritance and Encapsulation? (detailed answer)
+Answer: Inheritance is an object oriented concept which creates a parent-child relationship. It is one of the ways to reuse the code written for parent class but it also forms the basis of Polymorphism. On the other hand, Encapsulation is an object oriented concept which is used to hide the internal details of a class e.g. HashMap encapsulate how to store elements and how to calculate hash values.
+
+
+Question 8: What is the difference between Inheritance and Abstraction? (detailed answer)
+Answer: Abstraction is an object oriented concept which is used to simply things by abstracting details. It helps in the designing system. On the other hand, Inheritance allows code reuse. You can reuse the functionality you have already coded by using Inheritance. See Head First Object Oriented Analysis and Design for more details.
+
+
+
+Question 9: What is the difference between Polymorphism and Inheritance? (detailed answer)
+Answer: Both Polymorphism and Inheritance goes hand on hand, they help each other to achieve their goal. Polymorphism allows flexibility, you can choose which code to run at runtime by overriding.  See the detailed answer for more details.
+
+
+Question 10: What is the difference between Composition and Inheritance in OOP? (detailed answer)
+Answer: One of the good question to check the candidate's object-oriented programming skills. There are several differences between Composition and Inheritance in Java, some of them are following:
+
+1. The Composition is more flexible because you can change the implementation at runtime by calling setXXX() method, but Inheritance cannot be changed i.e. you cannot ask a class to implement another class at runtime.
+
+2. Composition builds HAS-A relationship while Inheritance builds IS-A relationship e.g. A Room HAS A Fan, but Mango IS-A Fruit.
+
+3. The parent-child relationship is best represented using Inheritance but If you just want to use the services of another class use Composition. For more differences see 5 reasons to favor composition over Inheritance.
+
+Java Inheritance Interview Questions and Answers
+
+
+
+11. Can we override static method in Java? (detailed answer)
+No, you cannot override a static method in Java because it's resolved at compile time. In order for overriding to work, a method should be virtual and resolved at runtime because objects are only available at runtime. This is one of the tricky Java questions, where interviewer tries to confuse you. A programmer is never sure about whether they can override or overload a static method in Java.
+
+
+12. Can we overload a static method in Java? (detailed answer)
+Yes, you can overload a static method in Java. Overloading has nothing to do with runtime but the signature of each method must be different. In Java, to change the method signature, you must change either number of arguments, type of arguments or order of arguments.
+
+
+13. Can we override a private method in Java? (detailed answer)
+No,  you cannot override a private method in Java because the private method is not inherited by the subclass in Java, which is essential for overriding. In fact, a private method is not visible to anyone outside the class and, more importantly, a call to the private method is resolved at compile time by using Type information as opposed to runtime by using the actual object.
+
+
+Question 14: What is method hiding in Java? (detailed answer)
+Answer: Since the static method cannot be overridden in Java, but if you declare the same static method in subclass then that would hide the method from the superclass. It means, if you call that method from subclass then the one in the subclass will be invoked but if you call the same method from superclass then the one in superclass will be invoked. This is known as method hiding in Java.
+
+
+Question 15: Can a class implement more than one interface in Java? (detailed answer)
+Yes, A class can implement more than one interface in Java e.g. A class can be both Comparable and Serializable at the same time. This is why the interface should be the best use for defining Type as described in Effective Java. This feature allows one class to play a polymorphic role in the program.
+
+
+Question 16: Can a class extends more than one class in Java? (detailed answer)
+Answer: No, a class can only extend just one more class in Java.  Though Every class also, by default extend the java.lang.Object class in Java.
+
+
+Question 17: Can an interface extends more than one interface in Java? (answer)
+Answer: Yes, unlike classes, an interface can extend more than one interface in Java. There are several example of this behavior in JDK itself e.g. java.util.List interface extends both Collection and Iterable interface to tell that it is a Collection as well as it allows iteration via Iterator.
+
+
+18: What will happen if a class extends two interfaces and they both have a method with same name and signature? (detailed answer)
+In this case, a conflict will arise because the compiler will not able to link a method call due to ambiguity. You will get a compile time error in Java.
+
+
+Question 19: Can we pass an object of a subclass to a method expecting an object of the super class? (answer)
+Answer: Yes, you can pass that because subclass and superclass are related to each other by Inheritance which provides IS-A property.  I mean Banana is a Fruit so you can pass banana if somebody expect fruit. Now there are scenario, where you can't do e.g. when subclass violates the Liskov Substitution principle i.e. you cannot pass a plastic banana to someone expecting fruit :-), The eat() function will throw exception.
+
+
+Question 21: How to call a method of a subclass, if you are holding an object of the subclass in a reference variable of type superclass? (answer)
+Answer: You can call a method of the subclass by first casting the object hold by reference variable of  superclass into the subclass. Once you hold the object in subclass reference type, you can call methods from the subclass. See how type casting works in Java for more details.
+
